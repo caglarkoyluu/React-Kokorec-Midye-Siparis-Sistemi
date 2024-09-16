@@ -1,0 +1,68 @@
+.menu-page {
+    text-align: center;
+    padding: 20px;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center; /* Elemanları yatayda ortalar */
+    gap: 20px; /* Ürünler arasındaki boşluk */
+    flex-wrap: wrap; /* Elemanları sarmalayarak taşanları bir alt satıra atar */
+    max-width: 1200px; /* Maksimum genişlik vererek ortalama */
+    margin: 0 auto; /* Ortalamak için */
+}
+
+.menu-item {
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: calc(33.333% - 20px); /* 3 sütun oluşturur ve boşluğu hesaba katar */
+    max-width: 300px; /* Maksimum genişlik ayarı */
+    text-align: center;
+    box-sizing: border-box; /* Padding ve border dahil genişliği ayarlar */
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px; /* Sabit yükseklik ayarı */
+    object-fit: cover; /* Resmin kapsayıcıya sığmasını sağlar */
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-item h2 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.menu-item h6 {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.menu-item p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.menu-item:hover {
+    transform: scale(1.05); /* Üzerine gelince hafifçe büyüt */
+    border-color: #6c150c; /* Hover'da sınır rengi değiştir */
+}
+
+@media (max-width: 768px) {
+    .menu-item {
+        width: calc(50% - 20px); /* Küçük ekranlarda iki sütun */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        width: 100%; /* Çok küçük ekranlarda tek sütun */
+    }
+}

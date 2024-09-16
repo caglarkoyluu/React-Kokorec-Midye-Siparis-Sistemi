@@ -1,0 +1,107 @@
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: #6c150c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Sol ve sağa yerleştirir */
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative; /* Ortalamak için kullanılır */
+}
+
+.logo-link {
+    position: absolute;
+    left: 20%; /* Logonun konumunu sabit tutar */
+    transform: translateX(-50%);
+    display: flex; /* Logo etrafında doğru hizalama için */
+}
+
+.logo {
+    height: 100px; /* Logonun yüksekliği */
+}
+
+.mainLink {
+    margin-left: auto; /* Bağlantıları sağa hizalar */
+    margin-right: 100px; /* Sağ kenardan biraz boşluk bırakır */
+    display: flex; /* Linkleri yatay hizalar */
+    gap: 20px; /* Linkler arasındaki boşluk */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Menü konteyneri için stil */
+.menu-container {
+    position: relative;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover durumunda arka plan değişimi */
+}
+
+/* Dropdown menü stili */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #c31f1f; /* Daha koyu arka plan rengi */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gölgelendirme efekti */
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    z-index: 1000; /* Üstte görünmesi için */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Geçiş efektleri */
+    opacity: 0;
+    transform: translateY(-10px); /* Açılırken yukarıdan gelir */
+    pointer-events: none; /* Görünmezken tıklanamaz */
+}
+
+.menu-container:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0); /* Geçiş efektleri tamamlanır */
+    pointer-events: auto; /* Göründüğünde tıklanabilir */
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white; /* Daha belirgin bir yazı rengi */
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.dropdown-item:hover {
+    background-color: #742e2e; /* Hover durumunda koyu gri arka plan */
+    border-radius: 5px; /* Hoverda kenarları yumuşat */
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Küçük ekranlarda alt alta dizilir */
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .mainLink a {
+        font-size: 13px;
+    }
+
+    .mainLink {
+        margin: 0;
+    }
+}
